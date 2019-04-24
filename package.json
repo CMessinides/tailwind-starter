@@ -1,0 +1,13 @@
+{
+  "name": "tailwind-starter-config",
+  "version": "1.0.0",
+  "description": "Custom configuration for my projects using Tailwind.css",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CMessinides/tailwind-starter.git"
+  },
+  "author": "Cameron Messinides <me@cmessinides.com>",
+  "license": "MIT",
+  "private": false
+}

@@ -1,0 +1,6 @@
+# JS modules
+node_modules
+
+# Editor configuration
+.vscode
+
