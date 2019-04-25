@@ -9,5 +9,8 @@
   },
   "author": "Cameron Messinides <me@cmessinides.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "lodash.clonedeep": "^4.5.0"
+  }
 }
