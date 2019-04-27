@@ -1,7 +1,7 @@
 const sharedSpacing = {
-  px: '1px',
-  '0': '0',
-}
+  px: "1px",
+  "0": "0"
+};
 
 const spacingSizes = {
   xs: 4,
@@ -9,42 +9,44 @@ const spacingSizes = {
   md: 16,
   lg: 32,
   xl: 64,
-  '2xl': 96,
-  '3xl': 144,
-  '4xl': 240,
-}
+  "2xl": 96,
+  "3xl": 144,
+  "4xl": 240
+};
 
-const pxSpacing = transformSizes(spacingSizes, toPx, '-px');
-const remSpacing = transformSizes(spacingSizes, toRem, '-rm');
+const remSpacing = transformSizes(spacingSizes, toRem);
+const pxSpacing = transformSizes(spacingSizes, toPx, "-px");
 
 const fontSizes = {
   xs: 12,
   sm: 14,
   md: 16,
-  lg: 24,
-  xl: 32,
-  '2xl': 48,
-  '3xl': 64,
-  '4xl': 96,
-}
+  lg: 20,
+  xl: 28,
+  "2xl": 40,
+  "3xl": 56,
+  "4xl": 72,
+  "5xl": 96,
+  "6xl": 120
+};
 
-const pxFontSizes = transformSizes(fontSizes, toPx, '-px');
-const remFontSizes = transformSizes(fontSizes, toRem, '-rm');
+const remFontSizes = transformSizes(fontSizes, toRem);
+const pxFontSizes = transformSizes(fontSizes, toPx, "-px");
 
 function toRem(size) {
-  return `${size/16}rem`;
+  return `${size / 16}rem`;
 }
 
 function toPx(size) {
   return `${size}px`;
 }
 
-function transformSizes(sizeMap = {}, transform = x => x, suffix = 't') {
+function transformSizes(sizeMap = {}, transform = x => x, suffix = "") {
   return Object.keys(sizeMap).reduce(function(acc, key) {
     return {
       ...acc,
-      [key + suffix]: transform(sizeMap[key]),
-    }
+      [key + suffix]: transform(sizeMap[key])
+    };
   }, {});
 }
 
@@ -52,24 +54,24 @@ module.exports = {
   padding: {
     ...sharedSpacing,
     ...pxSpacing,
-    ...remSpacing,
+    ...remSpacing
   },
-  
+
   margin: {
-    auto: 'auto',
+    auto: "auto",
     ...sharedSpacing,
     ...pxSpacing,
-    ...remSpacing,
+    ...remSpacing
   },
 
   negativeMargin: {
     ...sharedSpacing,
     ...pxSpacing,
-    ...remSpacing,
+    ...remSpacing
   },
 
   textSizes: {
     ...pxFontSizes,
-    ...remFontSizes,
-  },
-}
+    ...remFontSizes
+  }
+};
